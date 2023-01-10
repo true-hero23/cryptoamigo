@@ -3,9 +3,11 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://crypto-amigo.onrender.com/",
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
+    "@fvilers/disable-react-devtools": "^1.3.0",
     "@mui/base": "^5.0.0-alpha.91",
     "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.9.2",
