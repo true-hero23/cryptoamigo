@@ -19,7 +19,7 @@ import { useLogout } from "../../hooks/authHooks/useLogout";
 
 const fetchChart = (id, days, currency, user) => {
   return axios.get(
-    `/api/coins/${id}/market_chart?days=${days}&currency=${currency.value}`,
+    `https://crypto-amigo-api.onrender.com/api/coins/${id}/market_chart?days=${days}&currency=${currency.value}`,
     {
       headers: {
         Authorization: `Bearer ${user.token}`,

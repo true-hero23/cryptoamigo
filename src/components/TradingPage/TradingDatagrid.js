@@ -22,7 +22,7 @@ import { useNavigate } from "react-router-dom";
 import CurrencyTab from "../../currency/Currency_Tab";
 
 const fetchCoins = (pageNumber, currency, user) => {
-  return axios.get(`api/coins/?currency=${currency.value}&page=${pageNumber}`, {
+  return axios.get(`https://crypto-amigo-api.onrender.com/api/coins/?currency=${currency.value}&page=${pageNumber}`, {
     headers: {
       Authorization: `Bearer ${user.token}`,
     },
@@ -31,7 +31,7 @@ const fetchCoins = (pageNumber, currency, user) => {
 
 const fetchSearch = (query, currency, user) => {
   return axios.get(
-    `api/coins/search_coin?query=${query}&currency=${currency.value}`,
+    `https://crypto-amigo-api.onrender.com/api/coins/search_coin?query=${query}&currency=${currency.value}`,
     {
       headers: {
         Authorization: `Bearer ${user.token}`,
@@ -41,7 +41,7 @@ const fetchSearch = (query, currency, user) => {
 };
 
 const fetchWatchlist = (currency, user) => {
-  return axios.get(`api/watchlist/get_watchlist/?currency=${currency.value}`, {
+  return axios.get(`https://crypto-amigo-api.onrender.com/api/watchlist/get_watchlist/?currency=${currency.value}`, {
     headers: {
       Authorization: `Bearer ${user.token}`,
     },
@@ -131,7 +131,7 @@ function TradingDatagrid() {
 
   const { mutate: addCoin, isLoading: addIsLoading } = useMutation(
     (coin) => {
-      return axios.post(`api/watchlist/post_watchlist`, coin, {
+      return axios.post(`https://crypto-amigo-api.onrender.com//watchlist/post_watchlist`, coin, {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
@@ -147,7 +147,7 @@ function TradingDatagrid() {
 
   const { mutate: deleteCoin, isLoading: deleteIsLoading } = useMutation(
     (coin) => {
-      return axios.delete(`api/watchlist/delete_watchlist/${coin}`, {
+      return axios.delete(`https://crypto-amigo-api.onrender.com/api/watchlist/delete_watchlist/${coin}`, {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },

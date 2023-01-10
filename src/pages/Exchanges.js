@@ -14,14 +14,14 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { useLogout } from "../hooks/authHooks/useLogout";
 
 const fetchExchanges = (pageNumber, user) => {
-  return axios.get(`/api/exchanges/?page=${pageNumber}`, {
+  return axios.get(`https://crypto-amigo-api.onrender.com/api/exchanges/?page=${pageNumber}`, {
     headers: {
       Authorization: `Bearer ${user.token}`,
     },
   });
 };
 const fetchSearch = (query, user) => {
-  return axios.get(`/api/exchanges/search_exchange?query=${query}`, {
+  return axios.get(`https://crypto-amigo-api.onrender.com/api/exchanges/search_exchange?query=${query}`, {
     headers: {
       Authorization: `Bearer ${user.token}`,
     },

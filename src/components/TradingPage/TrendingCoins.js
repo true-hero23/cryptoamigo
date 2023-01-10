@@ -18,7 +18,7 @@ import { useAuthContext } from "../../hooks/authHooks/useAuthContext";
 import { useLogout } from "../../hooks/authHooks/useLogout";
 
 const fetchTrendingCoins = (currency, user) => {
-  return axios.get(`api/coins/trending?currency=${currency.value}`, {
+  return axios.get(`https://crypto-amigo-api.onrender.com/api/coins/trending?currency=${currency.value}`, {
     headers: {
       Authorization: `Bearer ${user.token}`,
     },

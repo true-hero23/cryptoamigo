@@ -16,7 +16,7 @@ import QueryStatsIcon from "@mui/icons-material/QueryStats";
 import { useLogout } from "../hooks/authHooks/useLogout";
 
 const fetchExchange = (id, user) => {
-  return axios.get(`/api/exchanges/${id}`, {
+  return axios.get(`https://crypto-amigo-api.onrender.com/api/exchanges/${id}`, {
     headers: {
       Authorization: `Bearer ${user.token}`,
     },

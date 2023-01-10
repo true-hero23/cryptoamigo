@@ -19,7 +19,7 @@ import { useNavigate } from "react-router-dom";
 import CurrencyTab from "../../currency/Currency_Tab";
 
 const fetchWatchlist = (currency, user) => {
-  return axios.get(`api/watchlist/get_watchlist/?currency=${currency.value}`, {
+  return axios.get(`https://crypto-amigo-api.onrender.com/api/watchlist/get_watchlist/?currency=${currency.value}`, {
     headers: {
       Authorization: `Bearer ${user.token}`,
     },
@@ -57,7 +57,7 @@ function MobileWatchlist() {
 
   const { mutate: deleteCoin, isLoading: deleteIsLoading } = useMutation(
     (coin) => {
-      return axios.delete(`api/watchlist/delete_watchlist/${coin}`, {
+      return axios.delete(`https://crypto-amigo-api.onrender.com/api/watchlist/delete_watchlist/${coin}`, {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },

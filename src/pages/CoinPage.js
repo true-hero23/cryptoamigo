@@ -18,7 +18,7 @@ import Avatar from "@mui/material/Avatar";
 import Chart from "../components/CoinPage/Chart";
 
 const fetchCoin = (id, user) => {
-  return axios.get(`/api/coins/${id}`, {
+  return axios.get(`https://crypto-amigo-api.onrender.com/api/coins/${id}`, {
     headers: {
       Authorization: `Bearer ${user.token}`,
     },
