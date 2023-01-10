@@ -11,10 +11,11 @@ export const useLogin = () => {
     setIsLoading(true);
     setError(null);
 
-    const response = await axios.post("/api/user/login", {
+    const response = await axios.post("https://crypto-amigo-api.onrender.com/api/user/login", {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
     });
+    console.log(response);
     const json = await response.json();
 
     if (!response.ok) {

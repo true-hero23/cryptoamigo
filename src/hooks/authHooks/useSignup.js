@@ -11,7 +11,7 @@ export const useSignup = () => {
     setIsLoading(true);
     setError(null);
 
-    const response = await axios.post("/api/user/signup", {
+    const response = await axios.post("https://crypto-amigo-api.onrender.com/api/user/signup", {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
     });
