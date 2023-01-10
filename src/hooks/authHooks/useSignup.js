@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useAuthContext } from "./useAuthContext";
+import axios from "axios"
 
 export const useSignup = () => {
   const [error, setError] = useState(null);
@@ -10,8 +11,7 @@ export const useSignup = () => {
     setIsLoading(true);
     setError(null);
 
-    const response = await fetch("/api/user/signup", {
-      method: "POST",
+    const response = await axios.post("/api/user/signup", {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
     });
