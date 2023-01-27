@@ -396,7 +396,7 @@ function TradingDatagrid() {
               return "";
             }}
             onCellClick={(params) => {
-              params.field !== "Watchlist" && navigate(`/coins/${params.id}`);
+              params.field !== "Watchlist" && navigate(`/${params.id}`);
             }}
           />
         </Box>

@@ -65,8 +65,8 @@ function App() {
                   path="/exchanges"
                   element={matches ? <Exchanges /> : <Exchanges />}
                 />
-                <Route path="/coins/:id" element={<CoinPage />} />
-                <Route path="/exchanges/:id" element={<ExchangePage />} />
+                <Route path="/:id" element={<CoinPage />} />
+                <Route path="/:id" element={<ExchangePage />} />
                 <Route path="/login" element={<Navigate to="/" />} />
                 <Route path="/signup" element={<Navigate to="/" />} />
               </Routes>
@@ -77,8 +77,8 @@ function App() {
               <Route path="/" element={<Navigate to="/login" />} />
               <Route path="/watchlist" element={<Navigate to="/login" />} />
               <Route path="/exchanges" element={<Navigate to="/login" />} />
-              <Route path="/coins/:id" element={<Navigate to="/login" />} />
-              <Route path="/exchanges/:id" element={<Navigate to="/login" />} />
+              <Route path="/:id" element={<Navigate to="/login" />} />
+              <Route path="/:id" element={<Navigate to="/login" />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
             </Routes>
