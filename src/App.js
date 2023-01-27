@@ -78,6 +78,7 @@ function App() {
               <Route path="/watchlist" element={<Navigate to="/login" />} />
               <Route path="/exchanges" element={<Navigate to="/login" />} />
               <Route path="/coins/:id" element={<Navigate to="/login" />} />
+              <Route path="/exchanges/:id" element={<Navigate to="/login" />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
             </Routes>
