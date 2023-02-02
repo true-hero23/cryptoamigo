@@ -131,7 +131,7 @@ function TradingDatagrid() {
 
   const { mutate: addCoin, isLoading: addIsLoading } = useMutation(
     (coin) => {
-      return axios.post(`https://crypto-amigo-api.onrender.com/watchlist/post_watchlist`, coin, {
+      return axios.post(`https://crypto-amigo-api.onrender.com/api/watchlist/post_watchlist`, coin, {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
