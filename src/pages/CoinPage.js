@@ -35,6 +35,7 @@ function CoinPage() {
   const {
     isLoading: coinIsLoading,
     isError: coinIsError,
+    error: coinsError,
     data: coin,
   } = useQuery(["crypto-coin", id, user], () => fetchCoin(id, user), {
     staleTime: 60000,
@@ -46,7 +47,7 @@ function CoinPage() {
   }
 
   if (coinIsError) {
-    return logout();
+    return <h2>Something went wrong: {coinsError.message}</h2>;
   }
 
   const statistics = (

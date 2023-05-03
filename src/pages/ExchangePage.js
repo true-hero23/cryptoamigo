@@ -34,6 +34,7 @@ function ExchangePage() {
     isFetching: exchangeIsFetching,
     isSuccess: exchangeIsSuccess,
     isError: exchangeIsError,
+    error: exchangeError,
     data: exchange,
   } = useQuery(
     ["crypto-exchange", id, currency, user],
@@ -46,7 +47,7 @@ function ExchangePage() {
   }
 
   if (exchangeIsError) {
-    return logout();
+    return <h2>Something went wrong: {exchangeError.message}</h2>;
   }
 
   const tickers =

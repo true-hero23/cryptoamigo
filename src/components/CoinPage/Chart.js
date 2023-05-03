@@ -51,6 +51,7 @@ function Chart() {
   const {
     isLoading: chartIsLoading,
     isError: chartIsError,
+    error: chartError,
     data: chart,
     isFetching: chartIsFetching,
   } = useQuery(
@@ -69,7 +70,7 @@ function Chart() {
   }
 
   if (chartIsError) {
-    return logout();
+    return <h2>Something went wrong: {chartError.message}</h2>;
   }
 
   const selectDays = (

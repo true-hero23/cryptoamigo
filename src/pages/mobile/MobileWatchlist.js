@@ -37,6 +37,7 @@ function MobileWatchlist() {
     data: watchlist,
     isLoading: watchlistIsLoading,
     isError: watchlistIsError,
+    error: watchlistError,
     isFetching: watchlistIsFetching,
   } = useQuery(
     ["crypto-watchlist", currency, user],
@@ -75,7 +76,7 @@ function MobileWatchlist() {
     return <CircularProgress size="5em" />;
   }
   if (watchlistIsError) {
-    return logout();
+    return <h2>Something went wrong: {watchlistError.message}</h2>;
   }
 
   const columns = [

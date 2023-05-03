@@ -34,6 +34,7 @@ function TrendingCoins() {
   const {
     isLoading: trendingCoinsIsLoading,
     isError: trendingCoinsIsError,
+    error: trendingCoinsError,
     data: trendingCoins,
   } = useQuery(
     ["crypto-coins", currency, user],
@@ -56,7 +57,7 @@ function TrendingCoins() {
   }
 
   if (trendingCoinsIsError) {
-    return logout();
+    return <h2>Something went wrong: {trendingCoinsError.message}</h2>;
   }
 
   const CarouselItems = trendingCoins?.map((coin) => (

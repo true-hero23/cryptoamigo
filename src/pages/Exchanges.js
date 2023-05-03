@@ -53,6 +53,7 @@ function Exchanges() {
   const {
     isLoading: exchangesIsLoading,
     isError: exchangesIsError,
+    error: exchangesError,
     data: exchanges,
     isFetching: exchangesIsFetching,
   } = useQuery(
@@ -93,7 +94,7 @@ function Exchanges() {
     return <CircularProgress size="5em" />;
   }
   if (exchangesIsError) {
-    return logout();
+    return <h2>Something went wrong: {exchangesError.message}</h2>;
   }
   if (query.length >= 3) {
     searchRefetch();

@@ -74,6 +74,7 @@ function TradingDatagrid() {
   const {
     isLoading: coinsIsLoading,
     isError: coinsIsError,
+    error: coinsError,
     data: coins,
     isFetching: coinsIsFetching,
   } = useQuery(
@@ -166,7 +167,7 @@ function TradingDatagrid() {
   }
 
   if (coinsIsError) {
-    return logout();
+    return <h2>Something went wrong: {coinsError.message}</h2>;
   }
   if (query.length >= 3) {
     searchRefetch();
