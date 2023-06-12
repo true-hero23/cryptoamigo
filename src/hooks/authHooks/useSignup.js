@@ -19,7 +19,16 @@ export const useSignup = () => {
 
     if (!response.ok) {
       setIsLoading(false)
-      setError(json.error)
+      setError(<div>
+        <p>{json.error}. Contain:</p>
+        <ul>
+          <li>At least 8 characters length</li>
+          <li>At least 1 number (0...9)</li>
+          <li>At least 1 lowercase letter (a...z)</li>
+          <li>At least 1 uppercase letter (A...Z)</li>
+          <li>At least 1 special symbol (!...$)</li>
+        </ul>
+      </div>)
     }
     if (response.ok) {
       // save the user to local storage
