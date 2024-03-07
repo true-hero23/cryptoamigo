@@ -174,19 +174,6 @@ function CoinPage() {
               {`${coin?.data.community_score} %`}
             </Typography>
           </div>
-          // <div>
-          //   <Typography
-          //     sx={{ fontSize: "1em", fontWeight: 700 }}
-          //     color="text.secondary"
-          //   >
-          //     {" "}
-          //     Alexa Rank
-          //   </Typography>
-          //   <Typography sx={{ fontSize: "1em", fontWeight: 600 }}>
-          //     {" "}
-          //     {coin?.data.public_interest_stats.alexa_rank}{" "}
-          //   </Typography>
-          // </div>
           <div>
             <Typography
               sx={{ fontSize: "1em", fontWeight: 700 }}
